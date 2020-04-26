@@ -1,0 +1,22 @@
+<import src="../../../common/head.ttml"></import>
+<import src="../../../common/foot.ttml"></import>
+
+<view  class="container">
+  <template  is="head" data="{{title: 'navigator'}}"></template>
+
+  <view  class="page-body">
+    <view  class="btn-area">
+      <wx-navigator  url="navigate?title=navigate" hover-class="navigator-hover">
+        <wx-button  type="default">跳转到新页面</wx-button>
+      </wx-navigator>
+      <wx-navigator  url="redirect?title=redirect" redirect hover-class="other-navigator-hover">
+        <wx-button  type="default">在当前页打开</wx-button>
+      </wx-navigator>
+      <wx-navigator  target="miniProgram" open-type="navigate" app-id="wx4f1b24bdc99fa23b" version="release">
+         <wx-button  type="default">打开小程序</wx-button>
+        </wx-navigator>
+    </view>
+  </view>
+
+  <template  is="foot"></template>
+</view>

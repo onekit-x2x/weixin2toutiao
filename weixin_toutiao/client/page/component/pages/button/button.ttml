@@ -1,0 +1,34 @@
+<import src="../../../common/head.ttml"></import>
+<import src="../../../common/foot.ttml"></import>
+
+<view  class="container">
+  <template  is="head" data="{{title: 'button'}}"></template>
+
+  <view  class="page-body">
+    <view  class="btn-area" id="buttonContainer">
+      <wx-button  type="primary">页面主操作 Normal</wx-button>
+      <wx-button  type="primary" loading="true">页面主操作 Loading</wx-button>
+      <wx-button  type="primary" disabled="true">页面主操作 Disabled</wx-button>
+
+      <wx-button  type="default">页面次要操作 Normal</wx-button>
+      <wx-button  type="default" disabled="true">页面次要操作 Disabled</wx-button>
+
+      <wx-button  type="warn">警告类操作 Normal</wx-button>
+      <wx-button  type="warn" disabled="true">警告类操作 Disabled</wx-button>
+
+      <view  class="button-sp-area">
+        <wx-button  type="primary" plain="true">按钮</wx-button>
+        <wx-button  type="primary" disabled="true" plain="true">不可点击的按钮</wx-button>
+
+        <wx-button  type="default" plain="true">按钮</wx-button>
+        <wx-button  type="default" disabled="true" plain="true">按钮</wx-button>
+
+        <wx-button  class="mini-btn" type="primary" size="mini">按钮</wx-button>
+        <wx-button  class="mini-btn" type="default" size="mini">按钮</wx-button>
+        <wx-button  class="mini-btn" type="warn" size="mini">按钮</wx-button>
+      </view>
+    </view>
+  </view>
+
+  <template  is="foot"></template>
+</view>

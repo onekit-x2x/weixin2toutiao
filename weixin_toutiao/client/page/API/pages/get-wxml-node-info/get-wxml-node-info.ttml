@@ -1,0 +1,27 @@
+<import src="../../../common/head.ttml"></import>
+<import src="../../../common/foot.ttml"></import>
+
+<view  class="container">
+  <template  is="head" data="{{title: 'createSelectorQuery'}}"></template>
+
+  <view  class="page-body">
+    <view  class="page-section">
+      <wx-movable-area >
+        <wx-movable-view  class="target" x="{{x}}" y="{{y}}" direction="all" bindchange="getNodeInfo">
+          Drag
+        </wx-movable-view>
+      </wx-movable-area>
+    </view>
+
+    <view  class="page-section">
+      <view  class="metric">
+        <view  tt:for="{{ metrics }}" tt:key="{{item.key}}">
+          <text  class="b">{{ item.key }}</text>
+          <text  class="span">{{ item.val }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <template  is="foot"></template>
+</view>

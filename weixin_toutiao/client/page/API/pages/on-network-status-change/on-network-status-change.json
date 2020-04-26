@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "监听手机网络变化",
+  "usingComponents": {
+    "wx-ad": "/onekit/ui/ad/ad",
+    "wx-button": "/onekit/ui/button/button",
+    "wx-editor": "/onekit/ui/editor/editor",
+    "wx-map": "/onekit/ui/map/map",
+    "wx-modal": "/onekit/ui/modal/modal",
+    "wx-open-data": "/onekit/ui/open-data/open-data",
+    "wx-video": "/onekit/ui/video/video"
+  }
+}

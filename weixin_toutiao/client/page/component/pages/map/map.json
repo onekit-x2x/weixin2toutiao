@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "map",
+  "usingComponents": {
+    "wx-ad": "/onekit/ui/ad/ad",
+    "wx-button": "/onekit/ui/button/button",
+    "wx-editor": "/onekit/ui/editor/editor",
+    "wx-map": "/onekit/ui/map/map",
+    "wx-modal": "/onekit/ui/modal/modal",
+    "wx-open-data": "/onekit/ui/open-data/open-data",
+    "wx-rich-text": "/onekit/ui/rich-text/rich-text",
+    "wx-video": "/onekit/ui/video/video",
+    "wx-movable-area": "/onekit/ui/movable-area/movable-area",
+    "wx-movable-view": "/onekit/ui/movable-view/movable-view"
+  }
+}

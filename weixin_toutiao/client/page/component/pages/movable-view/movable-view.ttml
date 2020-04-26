@@ -1,0 +1,66 @@
+<import src="../../../common/head.ttml"></import>
+<import src="../../../common/foot.ttml"></import>
+
+<view  class="container">
+  <template  is="head" data="{{title: 'movable-view'}}"></template>
+
+  <view  class="page-body">
+    <view  class="page-section">
+      <view  class="page-section-title first">movable-view区域小于movable-area</view>
+      <wx-movable-area >
+        <wx-movable-view   x="{{x}}" y="{{y}}" direction="all"  ><view style="background:red;margin:20px;width:50px;">x</view></wx-movable-view>
+      </wx-movable-area>
+    </view>
+    <view  class="btn-area">
+      <wx-button  bindtap="tap" class="page-body-button" type="primary">点击移动到 (30px, 30px)</wx-button>
+    </view>
+
+    <view  class="page-section">
+      <view  class="page-section-title">movable-view区域大于movable-area</view>
+      <wx-movable-area >
+        <wx-movable-view  class="max" direction="all">text</wx-movable-view>
+      </wx-movable-area>
+    </view>
+
+    <view  class="page-section">
+      <view  class="page-section-title">只可以横向移动</view>
+      <wx-movable-area >
+        <wx-movable-view  direction="horizontal">text</wx-movable-view>
+      </wx-movable-area>
+    </view>
+
+    <view  class="page-section">
+      <view  class="page-section-title">只可以纵向移动</view>
+      <wx-movable-area >
+        <wx-movable-view  direction="vertical">text</wx-movable-view>
+      </wx-movable-area>
+    </view>
+
+    <view  class="page-section">
+      <view  class="page-section-title">可超出边界</view>
+      <wx-movable-area >
+        <wx-movable-view  direction="all" out-of-bounds>text</wx-movable-view>
+      </wx-movable-area>
+    </view>
+
+    <view  class="page-section">
+      <view  class="page-section-title">带有惯性</view>
+      <wx-movable-area >
+        <wx-movable-view  direction="all" inertia>text</wx-movable-view>
+      </wx-movable-area>
+    </view>
+
+    <view  class="page-section">
+      <view  class="page-section-title">可放缩</view>
+      <wx-movable-area  scale-area>
+        <wx-movable-view  direction="all" bindchange="onChange" bindscale="onScale" scale scale-min="0.5" scale-max="4" scale-value="{{scale}}">text</wx-movable-view>
+      </wx-movable-area>
+    </view>
+
+    <view  class="btn-area">
+      <wx-button  bindtap="tap2" class="page-body-button" type="primary">点击放大3倍</wx-button>
+    </view>
+  </view>
+
+  <template  is="foot"></template>
+</view>

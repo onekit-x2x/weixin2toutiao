@@ -1,0 +1,3 @@
+
+<web-view id="eWebView" bindmessage="webview_message" src="{{url}}">
+</web-view>
