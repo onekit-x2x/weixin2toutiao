@@ -1,0 +1,18 @@
+<import src="../../../common/head.ttml"></import>
+<import src="../../../common/foot.ttml"></import>
+
+<view  class="container">
+  <template  is="head" data="{{title: 'navigateTo/Back, redirectTo'}}"></template>
+
+  <view  class="page-body">
+    <view  class="btn-area">
+      <wx-button  bindtap="navigateTo">跳转新页面</wx-button>
+      <wx-button  bindtap="navigateBack">返回上一页</wx-button>
+      <wx-button  bindtap="redirectTo">在当前页面打开</wx-button>
+      <wx-button  bindtap="switchTab">跳转到组件Tab页</wx-button>
+      <wx-button  bindtap="reLaunch">关闭所有页面并跳转</wx-button>
+    </view>
+  </view>
+
+  <template  is="foot"></template>
+</view>

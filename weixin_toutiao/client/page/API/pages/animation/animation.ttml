@@ -1,0 +1,28 @@
+<import src="../../../common/head.ttml"></import>
+<import src="../../../common/foot.ttml"></import>
+
+<view  class="container">
+  <template  is="head" data="{{title: 'createAnimation'}}"></template>
+
+  <view  class="page-body">
+    <view  class="page-section">
+
+      <view  class="animation-element-wrapper">
+        <view  class="animation-element" animation="{{animation}}"></view>
+      </view>
+      <scroll-view  class="animation-buttons" scroll-y="true">
+        <wx-button  class="animation-button" bindtap="rotate">旋转</wx-button>
+        <wx-button  class="animation-button" bindtap="scale">缩放</wx-button>
+        <wx-button  class="animation-button" bindtap="translate">移动</wx-button>
+        <wx-button  class="animation-button" bindtap="skew">倾斜</wx-button>
+        <wx-button  class="animation-button" bindtap="rotateAndScale">旋转并缩放</wx-button>
+        <wx-button  class="animation-button" bindtap="rotateThenScale">旋转后缩放</wx-button>
+        <wx-button  class="animation-button" bindtap="all">同时展示全部</wx-button>
+        <wx-button  class="animation-button" bindtap="allInQueue">顺序展示全部</wx-button>
+        <wx-button  class="animation-button animation-button-reset" bindtap="reset">还原</wx-button>
+      </scroll-view>
+    </view>
+  </view>
+
+  <template  is="foot"></template>
+</view>

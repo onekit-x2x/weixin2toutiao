@@ -1,0 +1,32 @@
+<import src="../../../common/head.ttml"></import>
+<import src="../../../common/foot.ttml"></import>
+
+<view  class="container">
+  <template  is="head" data="{{title: 'tabBar'}}"></template>
+
+  <view  class="page-body">
+    <view  class="btn-area">
+      <wx-button  bindtap="setTabBarBadge">
+        {{ !hasSetTabBarBadge ? '设置tab徽标' : '移除tab徽标' }}
+      </wx-button>
+      <wx-button  bindtap="showTabBarRedDot">
+        {{ !hasShownTabBarRedDot ?  '显示红点' : '移除红点'}}
+      </wx-button>
+      <wx-button  bindtap="customStyle">
+        {{ !hasCustomedStyle ? '自定义Tab样式' : '移除自定义样式'}}
+      </wx-button>
+      <wx-button  bindtap="customItem">
+        {{ !hasCustomedItem ? '自定义Tab信息' : '移除自定义信息' }}
+      </wx-button>
+      <wx-button  bindtap="hideTabBar">
+        {{ !hasHiddenTabBar ? '隐藏TabBar' : '显示TabBar' }}
+      </wx-button>
+    </view>
+
+    <view  class="btn-area">
+      <wx-button  type="primary" bindtap="navigateBack">返回上一级</wx-button>
+    </view>
+  </view>
+
+  <template  is="foot"></template>
+</view>

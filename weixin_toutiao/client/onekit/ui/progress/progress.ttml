@@ -1,0 +1,15 @@
+<view  style="border-radius:20px;display:flex;align-items:center;" >
+<progress 
+bindtap="changeColor"
+percent="{{percent}}" 
+stroke-width="{{strokeWidth}}" 
+backgroundColor="{{backgroundColor}}"
+active="{{active}}"
+color="{{color}}"
+active-color="{{activeColor}}"
+active-mode="{{activeMode}}"
+bindactiveend="{{bindactiveend}}"
+/>
+<text wx:if="{{showInfo}}" style="font-size:{{fontSize}}rpx">{{percent}}%</text>
+</view>
+

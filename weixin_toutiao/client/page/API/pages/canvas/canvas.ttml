@@ -1,0 +1,20 @@
+<import src="../../../common/head.ttml"></import>
+<import src="../../../common/foot.ttml"></import>
+
+<view  class="container">
+  <template  is="head" data="{{title: 'createContext'}}"></template>
+
+  <view  class="page-body">
+    <view  class="page-section">
+      <canvas  class="canvas-element" canvas-id="canvas"></canvas>
+      <scroll-view  class="canvas-buttons" scroll-y="true">
+        <block  tt:for="{{methods}}" tt:for-item="method">
+          <wx-button  class="canvas-button" bindtap="{{method}}">{{method}}</wx-button>
+        </block>
+        <wx-button  class="canvas-button" bindtap="toTempFilePath" type="primary">toTempFilePath</wx-button>
+      </scroll-view>
+    </view>
+  </view>
+
+  <template  is="foot"></template>
+</view>

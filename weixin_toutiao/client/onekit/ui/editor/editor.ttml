@@ -1,0 +1,4 @@
+<view class="{{Class}}" style="overflow:hidden!important;">
+  <rich-text style="position:absolute;width:100%;height:100%;" nodes="{{nodes}}"/>
+  <view style="position:absolute;width:100%;height:100%;" onTap="editor_tap"/>
+</view>

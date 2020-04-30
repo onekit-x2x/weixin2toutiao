@@ -1,0 +1,6 @@
+<import src="../../../common/head.ttml"></import>
+<import src="../../../common/foot.ttml"></import>
+
+<view  class="container">
+  <template  is="head" data="{{title: '当前页'}}"></template>
+</view>

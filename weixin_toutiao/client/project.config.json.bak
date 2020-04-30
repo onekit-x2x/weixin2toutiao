@@ -1,0 +1,11 @@
+{
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "1900013026",
+	"projectname": "onekit的小程序"
+}
