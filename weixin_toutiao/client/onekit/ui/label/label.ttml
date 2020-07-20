@@ -1,0 +1,12 @@
+<view class="page-section page-section-space">
+  <view class="page-section-title">表单组件在label内</view>
+  <checkbox-group class="group" bindchange="checkboxChange">
+    <view class="label-1" :for="{{checkboxItems}}">
+      <label>
+        <checkbox value="{{item.name}}" checked="{{item.checked}}"></checkbox>
+        <text class="label-1-text">{{item.value}}</text>
+        <slot/>
+      </label>
+    </view>
+  </checkbox-group>
+</view>

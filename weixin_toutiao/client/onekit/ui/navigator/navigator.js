@@ -6,15 +6,12 @@ Component({
       type: String,
       value: "self"
     },
-    redirect: {
-      type: Boolean
-    },
     // 当前小程序内的跳转链接
     url: {
       type: String,
     },
     // 跳转方式
-    "openType": {
+    openType: {
       type: String,
       value: "navigate",
     },
@@ -24,18 +21,50 @@ Component({
       value: 1,
     },
     //当target="miniProgram"时有效，要打开的小程序 appId
-    "appId": {
+    appId: {
       type: String,
     },
-    "version": {
+    path: {
+      type: String,
+    },
+    extraData: {
+      type: Object,
+    },
+    version: {
       type: String,
       value: "release",
     },
+    hoverClass: {
+      type: String,
+      value: "navigator-hover",
+    },
+    hoverStartTime: {
+      type: Number,
+      value: 50,
+    },
+    hoverStayTime: {
+      type: Number,
+      value: 600,
+    },
+    hoverStopPropagation: {
+      type: Boolean,
+      value: false,
+    },
+    bindsuccess: {
+      type: String
+    },
+    bindfail: {
+      type: String
+    },
+    bindcomplete: {
+      type: String
+    },
+
     // 这里定义了 headerText 属性，属性值可以在组件使用时指定
     headerText: {
       type: String,
-      value: "默认值"
-    }
+      value: "默认值",
+    },
   },
   data: {
     // 组件内部数据
@@ -94,7 +123,7 @@ Component({
     _target_miniProgram(){
       var appId = this.properties.appId;
       console.log("xxxxx:",appId);
-       //"tta6cdd07039e72db5"
+      //  "tta6cdd07039e72db5"
        tt.navigateToMiniProgram({
            appId : "tta6cdd07039e72db5",
            success(e){

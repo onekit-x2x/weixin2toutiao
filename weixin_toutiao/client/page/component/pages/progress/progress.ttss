@@ -1,11 +1,11 @@
-progress{
+.onekit-progress{
   width: 100%;
 }
 .progress-box{
   display: flex;
-  height: 50rpx;
-  margin-bottom: 60rpx;
+  height: 25px;
+  margin-bottom: 30px;
 }
 .progress-cancel{
-  margin-left: 40rpx;
+  margin-left: 20px;
 }

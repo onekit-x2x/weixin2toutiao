@@ -1,1 +1,5 @@
-<view bindtap="view_tap" navigateToMiniProgram ><slot/></view>
+<view bindtap="view_tap" navigateToMiniProgram>
+	<navigator>
+		<slot/>
+	</navigator>
+</view>

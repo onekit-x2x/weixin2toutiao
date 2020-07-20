@@ -1,0 +1,6 @@
+<picker-view>
+	<picker-view-column >
+		<view tt:for="{{years}}">{{item}}年</view>
+        <slot/>
+	</picker-view-column>
+</picker-view>

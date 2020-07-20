@@ -1,0 +1,6 @@
+<radio-group>
+    <label class="" a:for="{{item}}">
+        <radio value="item.name" />
+        <slot/>{{item.value}}
+    </label>
+</radio-group>

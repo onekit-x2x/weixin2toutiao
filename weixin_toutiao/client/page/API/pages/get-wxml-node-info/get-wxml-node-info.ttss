@@ -1,4 +1,4 @@
-movable-view {
+.onekit-movable-view {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,7 +8,7 @@ movable-view {
   color: #fff;  
 }
 
-movable-area {
+.onekit-movable-area {
   height: 400rpx;
   width: 400rpx;
   background-color: #ccc;

@@ -1,6 +1,6 @@
 @import "../../../common/lib/weui.ttss";
 
-form {
+.onekit-form {
   margin-top: 30rpx;
 }
 

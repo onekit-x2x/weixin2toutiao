@@ -1,18 +1,18 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
 
-<view  class="container">
-  <template  is="head" data="{{title: 'text'}}"></template>
+<onekit-view class="onekit-view container">
+  <template is="head" data="{{title: 'text'}}"/>
 
-  <view  class="page-body">
-    <view  class="page-section page-section-spacing">
-      <view  class="text-box" scroll-y="true" scroll-top="{{scrollTop}}">
-        <text >{{text}}</text>
-      </view>
-      <wx-button  disabled="{{!canAdd}}" bindtap="add">add line</wx-button>
-      <wx-button  disabled="{{!canRemove}}" bindtap="remove">remove line</wx-button>
-    </view>
-  </view>
+  <onekit-view class="onekit-view page-body">
+    <onekit-view class="onekit-view page-section page-section-spacing">
+      <onekit-view class="onekit-view text-box" scroll-y="true" scroll-top="{{scrollTop}}">
+        <onekit-text class="onekit-text">{{text}}</onekit-text>
+      </onekit-view>
+      <onekit-button class="onekit-button" disabled="{{!canAdd}}" bindtap="add">add line</onekit-button>
+      <onekit-button class="onekit-button" disabled="{{!canRemove}}" bindtap="remove">remove line</onekit-button>
+    </onekit-view>
+  </onekit-view>
 
-  <template  is="foot"></template>
-</view>
+  <template is="foot" />
+</onekit-view>

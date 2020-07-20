@@ -1,4 +1,4 @@
-textarea {
+.onekit-textarea {
     width: 700rpx;
     padding: 25rpx 0;
 }

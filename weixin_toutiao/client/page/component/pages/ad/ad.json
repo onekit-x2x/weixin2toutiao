@@ -1,12 +1,13 @@
 {
   "navigationBarTitleText": "ad",
   "usingComponents": {
-    "wx-ad": "/onekit/ui/ad/ad",
-    "wx-button": "/onekit/ui/button/button",
-    "wx-editor": "/onekit/ui/editor/editor",
-    "wx-map": "/onekit/ui/map/map",
-    "wx-modal": "/onekit/ui/modal/modal",
-    "wx-open-data": "/onekit/ui/open-data/open-data",
-    "wx-video": "/onekit/ui/video/video"
+    "onekit-ad": "/onekit/ui/ad/ad",
+    "onekit-button": "/onekit/ui/button/button",
+    "onekit-editor": "/onekit/ui/editor/editor",
+    "onekit-map": "/onekit/ui/map/map",
+    "onekit-modal": "/onekit/ui/modal/modal",
+    "onekit-open-data": "/onekit/ui/open-data/open-data",
+    "onekit-video": "/onekit/ui/video/video",
+    "onekit-view": "/onekit/ui/view/view"
   }
 }

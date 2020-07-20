@@ -1,0 +1,4 @@
+<cover-view>
+	<slot>
+	</slot>
+</cover-view>

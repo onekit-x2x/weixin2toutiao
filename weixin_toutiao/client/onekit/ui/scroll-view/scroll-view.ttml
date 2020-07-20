@@ -1,0 +1,3 @@
+<scroll-view class="onekit-scroll-view">
+    <slot/>
+</scroll-view>

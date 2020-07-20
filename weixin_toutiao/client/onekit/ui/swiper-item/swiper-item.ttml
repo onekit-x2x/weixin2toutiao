@@ -1,0 +1,8 @@
+<swiper >
+    <block>
+        <swiper-item>
+            <slot/>
+            <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+    </block>
+</swiper>

@@ -1,28 +1,28 @@
-<view  class="index">
-  <view  class="index-hd">
+<onekit-view  class="index">
+  <onekit-view  class="index-hd">
     <image  class="index-logo" src="resources/kind/logo.png"></image>
-    <view  class="index-desc">以下将展示小程序官方组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见 <navigator  url="pages/doc-web-view/doc-web-view" class="weui-agree__link">小程序开发文档</navigator>。</view>
-  </view>
-  <view  class="index-bd">
-    <view  class="kind-list">
+    <onekit-view  class="index-desc">以下将展示小程序官方组件能力，组件样式仅供参考，开发者可根据自身需求自定义组件样式，具体属性参数详见 <navigator  url="pages/doc-web-onekit-view/doc-web-onekit-view" class="weui-agree__link">小程序开发文档</navigator>。</onekit-view>
+  </onekit-view>
+  <onekit-view  class="index-bd">
+    <onekit-view  class="kind-list">
       <block  tt:for="{{list}}" tt:key="{{item.id}}">
-        <view  class="kind-list-item">
-          <view  id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
-            <view  class="kind-list-text">{{item.name}}</view>
+        <onekit-view  class="kind-list-item">
+          <onekit-view  id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <onekit-view  class="kind-list-text">{{item.name}}</onekit-view>
             <image  class="kind-list-img" src="resources/kind/{{item.id}}.png"></image>
-          </view>
-          <view  class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
-            <view  class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+          </onekit-view>
+          <onekit-view  class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <onekit-view  class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
               <block  tt:for="{{item.pages}}" tt:for-item="page" tt:key="*item">
                 <navigator  url="pages/{{page}}/{{page}}" class="navigator">
-                  <view  class="navigator-text">{{page}}</view>
-                  <view  class="navigator-arrow"></view>
+                  <onekit-view  class="navigator-text">{{page}}</onekit-view>
+                  <onekit-view  class="navigator-arrow"></onekit-view>
                 </navigator>
               </block>
-            </view>
-          </view>
-        </view>
+            </onekit-view>
+          </onekit-view>
+        </onekit-view>
       </block>
-    </view>
-  </view>
-</view>
+    </onekit-view>
+  </onekit-view>
+</onekit-view>

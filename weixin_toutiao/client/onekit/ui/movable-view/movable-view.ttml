@@ -1,2 +1,20 @@
-<!-- onekit/ui/movable-view/movable-view.ttml -->
-<text>onekit/ui/movable-view/movable-view.ttml</text>
+<movable-view
+direction="{{direction}}"
+inertia="{{inertia}}"
+out-of-bounds="{{out-of-bounds}}"
+x="{{x}}"
+y="{{y}}"
+damping="{{damping}}"
+friction="{{friction}}"
+disabled="{{disabled}}"
+scale="{{scale}}"
+scale-min="{{scale-min}}"
+scale-max="{{scale-max}}"
+scale-value="{{scale-value}}"
+animation="{{animation}}"
+
+onChange="movable_Change"
+onScale="movable_scale"
+>
+<slot></slot>
+</movable-view>

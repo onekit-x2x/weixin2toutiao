@@ -1,11 +1,17 @@
 Component({
-  mixins: [],
   data: {},
-  props: {},
-  attached() {},
-  didUpdate() {
+  properties: {
+    type:{
+      type:String
+    },
+    size:{
+      type:Number,
+      value:23
+    },
+    color:{
+      type:String
+    }
   },
-  didUnmount() {},
   methods: {},
   
 });

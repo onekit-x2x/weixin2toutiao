@@ -1,2 +1,5 @@
 <view class="onekit-icon-{{type}}" style="color:{{color}};font-size:{{size}}px;">
 </view>
+<!--
+<icon type="{{type}}" size="{{size}}" color="{{color}}" />
+-->

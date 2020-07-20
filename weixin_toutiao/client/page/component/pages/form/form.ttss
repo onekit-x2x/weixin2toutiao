@@ -1,11 +1,11 @@
 @import "../../../common/lib/weui.ttss";
 
-label {
+.onekit-label {
   display: inline-block;
   min-width: 270rpx;
   margin-right: 20rpx;
 }
-form{
+.onekit-form{
   width: 100%;
 }
 .picker-text {

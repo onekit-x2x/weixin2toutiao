@@ -1,16 +1,16 @@
 <import src="../../../common/head.ttml"></import>
 <import src="../../../common/foot.ttml"></import>
 
-<view  class="container">
+<onekit-view  class="onekit-view container">
   <template  is="head" data="{{title: 'canvas'}}"></template>
 
-  <view  class="page-body">
-    <view  class="page-body-wrapper">
-      <canvas  canvas-id="canvas" class="canvas"></canvas>
-    </view>
-  </view>
+  <onekit-view  class="onekit-view page-body">
+    <onekit-view  class="onekit-view page-body-wrapper">
+      <onekit-canvas canvas-id="canvas" class="onekit-canvas canvas"></onekit-canvas>
+    </onekit-view>
+  </onekit-view>
 
   <template  is="foot"></template>
-</view>
+</onekit-view>
 
 

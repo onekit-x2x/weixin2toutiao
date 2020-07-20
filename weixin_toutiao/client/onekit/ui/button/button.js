@@ -4,10 +4,7 @@ Component({
   data: {
     hideContact: true
   },
-  attached() { },
-  didUpdate() { },
-  didUnmount() { },
-  props: {},
+  properties: {},
   methods: {
     contactBG_tap() {
       this.setData({ hideContact: true });

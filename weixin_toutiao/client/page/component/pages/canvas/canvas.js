@@ -37,7 +37,6 @@ Page({
     }
 
     const context = wx.createCanvasContext('canvas')
-
     function ball(x, y) {
       context.beginPath(0)
       context.arc(x, y, 5, 0, Math.PI * 2)
@@ -58,6 +57,7 @@ Page({
 
     context.draw()
   },
+  
 
   onUnload() {
     clearInterval(this.interval)

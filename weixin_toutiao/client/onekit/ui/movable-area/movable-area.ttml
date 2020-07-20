@@ -1,2 +1,6 @@
-<!-- onekit/ui/movable-area/movable-area.ttml -->
-<text>onekit/ui/movable-area/movable-area.ttml</text>
+<movable-area
+scale-area="{{scaleArea}}"
+>
+<slot>
+</slot>
+</movable-area>

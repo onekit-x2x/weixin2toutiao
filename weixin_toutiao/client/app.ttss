@@ -1,3 +1,4 @@
+
 @import "/onekit/onekit.ttss";
 /* reset */
 page {
@@ -6,17 +7,20 @@ page {
   font-size: 32rpx;
   line-height: 1.6;
 }
-checkbox, radio{
+
+
+
+.onekit-checkbox, .onekit-radio{
   margin-right: 10rpx;
 }
-button{
+.onekit-button{
   margin-top: 20rpx;
   margin-bottom: 20rpx;
 }
-form{
+.onekit-form{
   width: 100%;
 }
-input {
+.onekit-input {
   width: 100%;
 }
 
@@ -62,7 +66,7 @@ input {
 .page-body {
   width: 100%;
   flex-grow: 1;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .page-body-wrapper {
   display: flex;
@@ -104,8 +108,8 @@ input {
   font-size: 0;
 }
 .icon-foot{
-  width: 152rpx;
-  height: 23rpx;
+  width: 76px;
+  height: 12px;
 }
 
 .page-section{

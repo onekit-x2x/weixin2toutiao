@@ -1,9 +1,9 @@
 @import "../../../common/lib/weui.ttss";
 
-button{
+.onekit-button{
   margin-bottom: 30rpx;
 }
-button:last-child{
+.onekit-button:last-child{
   margin-bottom: 0;
 }
 .page-section-title{

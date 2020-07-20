@@ -1,5 +1,3 @@
-import wx from "../../../../onekit/wx"
-
 Page({
   onShareAppMessage() {
     return {
@@ -33,5 +31,5 @@ Page({
 
   onScale(e) {
     console.log(e.detail)
-  },
+  }
 })

@@ -1,11 +1,11 @@
 .flex-wrp{
   margin-top: 60rpx;
-  display:flex;
+  display: flex;
 }
 .flex-item{
-  width: 200rpx;
-  height: 300rpx;
-  font-size: 26rpx;
+  width: 100px;
+  height: 150px;
+  font-size: 13px;
 }
 .flex-item-V{
   margin: 0 auto;

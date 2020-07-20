@@ -1,5 +1,5 @@
 @import "../../../common/lib/weui.ttss";
 
-input {
+.onekit-input {
   width: 100%;
 }

@@ -1,6 +1,6 @@
 @import "../../../common/lib/weui.ttss";
 
-camera {
+.onekit-camera {
   height: 500rpx;
 }
 
@@ -8,7 +8,7 @@ camera {
   margin-top: 0;
 }
 
-form {
+.onekit-form {
   margin-top: 30rpx;
 }
 

@@ -6,6 +6,9 @@
 		"minified": true,
 		"newFeature": true
 	},
-	"appid": "ttae9dd82031b784d1",
-	"projectname": "onekit的小程序"
+	"appid": "wxecb5d25a4a5c222f",
+	"projectname": "onekit%E7%9A%84%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {}
 }

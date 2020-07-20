@@ -1,4 +1,6 @@
 import CanvasContext from "./api/CanvasContext"
+import VideoContext from "./api/VideoContext"
+import LivePlayerContext from "./api/LivePlayerContext"
 import WORKER from "./api/WORKER"
 import wx_cloud from "./lib/wx.cloud"
 import onekit from "./lib/onekit"
@@ -226,6 +228,7 @@ var canvasId = object.canvasId;
   static saveVideoToPhotosAlbum(object) { return tt.saveVideoToPhotosAlbum(object) }
   static chooseVideo(object) { return tt.chooseVideo(object) }
   static createVideoContext(object) { return tt.createVideoContext(object) }
+  static createLivePlayerContext(object) { return tt.createLivePlayerContext(object) }
   static stopVoice(object) { return tt.stopVoice(object) }
   static pauseVoice(object) { return tt.pauseVoice(object) }
   static playVoice(object) { return tt.playVoice(object) }
@@ -317,19 +320,231 @@ var canvasId = object.canvasId;
   static offLocalServiceFound(callback) { return tt.offLocalServiceFound(callback); }
   static offLocalServiceDiscoveryStop(callback) { return tt.offLocalServiceDiscoveryStop(callback); }
   ///////// Open Interface //////////
-  static checkSession(object) { return tt.checkSession(object); }
+  static _checkSession(){
+      var now = new Date().getTime();
+        return getApp().onekitwx._jscode && getApp().onekitwx._login && now<= getApp().onekitwx._login + 1000*60 *60*24*3;
+  }
+  static checkSession(object) {
+   if(wx._checkSession()){
+     if (object.success) {
+                object.success();
+              }
+               if (object.complete) {
+                object.complete();
+              }
+          
+   }else{
+      if (object.fail) {
+                object.fail();
+              }
+               if (object.complete) {
+                object.complete();
+              }
+  }
+ }
 
-  static login = function (object) { return tt.login(object); }
-  static getUserInfo(object) { return tt.getUserInfo(object); }
-  static getOpenData = function (object) { return tt.getOpenData(object); }
-  static getPhoneNumber = function (object) { return tt.getPhoneNumber(object); }
+  static login = function (object) {
+    var that = this;
+    if (!object) {
+      return tt.login(object);
+    }
+    var object2 = {
+    };
+    object2.success = function (res) {
+      getApp().onekitwx._jscode = res.code;
+      getApp().onekitwx._login = new Date().getTime();
+      var result = { code: res.code };
+      if (object.success) {
+        object.success(result);
+      }
+      if (object.complete) {
+        object.complete(complete);
+      }
+    }
+    object2.fail = function (res) {
+      if (object.fail) {
+        object.fail(res);
+      }
+      if (object.complete) {
+        object.complete(res);
+      }
+    }
+    console.log(wx._checkSession());
+    if (wx._checkSession()) {
+      object2.success({ code: getApp().onekitwx._jscode });
+    } else {
+      tt.login(object2);
+    }
+  };
+  static getUserInfo(object) {
+
+    wx.login({
+      success: (res) => {
+        var jscode = res.code;
+        var withCredentials = object.withCredentials === true
+        tt.getUserInfo({
+          withCredentials: withCredentials,
+          success(res) {
+            console.log(res);
+            var url = getApp().onekitwx.server + "userinfo";
+            tt.request({
+              url: url,
+              header: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              method: "POST",
+              data: {
+                withCredentials : withCredentials,
+                data: JSON.stringify(res),
+                js_code: jscode
+              },
+              success(res) {
+                if (object.success) {
+                  res.detail = res.data;
+                  object.success(res.data);
+                }
+                if (object.complete) {
+                  object.complete(res);
+                }
+              }, fail(res) {
+                console.log(res);
+              }
+            });
+          }
+        });
+      }
+    });
+  };
+  static getOpenData = function(object) {
+    
+      if(!getApp().onekitwx._opendataCallbacks){
+        getApp().onekitwx._opendataCallbacks = [];
+      }
+    function success(data) {
+      var opendata = data.opendata;
+      getApp().onekitwx._opendata = opendata;
+      for (var cb = 0; cb < getApp().onekitwx._opendataCallbacks.length; cb++) {
+        getApp().onekitwx._opendataCallbacks[cb](opendata);
+      }
+      if (object.success) {
+        object.success(opendata);
+      }
+      if (object.complete) {
+        object.complete(opendata);
+      }
+    }
+    var opendata = getApp().onekitwx._opendata;
+    if (opendata) {
+      if (Object.keys(opendata) > 0) {
+        object.success(opendata);
+      } else {
+        if (object.success) {
+          getApp().onekitwx._opendataCallbacks.push(object.success);
+        }
+      }
+      return;
+    }
+    getApp().onekitwx._opendata = {};
+      wx.login({
+      success(res) {
+        var jscode = res.code;
+        tt.getUserInfo({
+          withCredentials: true,
+          success(res) {
+            var url = getApp().onekitwx.server + "opendata";
+            tt.request({
+              url: url,
+              header: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              method: "POST",
+              data: {
+                data : JSON.stringify(res),
+                js_code: jscode
+              },
+              success(res) {
+                success(res.data);
+              }, fail(res) {
+                console.log(res);
+              }
+            });
+          }
+        });
+      }
+    })
+
+  };
+  static _getPhoneNumber = function (data, callback) {
+    wx.login({
+      success: (res) => {
+        var jscode = res.code;
+        var url = getApp().onekitwx.server + "phonenumber";
+         console.log(data,jscode);
+        tt.request({
+          url: url,
+          header: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          method: "POST",
+          data: {
+            data: JSON.stringify(data),
+            js_code: jscode
+          },
+          success(res) {
+            var data = res.data;
+            callback(data);
+          }, fail(res) {
+            console.log(res.data);
+          }
+        });
+      }
+    });
+  }
+  static getPhoneNumber = function (object) {
+    getApp().onekitwx._bindgetphonenumber = (data) => {
+      _getPhoneNumber(data, (res) => {
+        if (object.success) {
+          object.success(res);
+        }
+        if (object.complete) {
+          object.complete(res);
+        }
+      });
+    }
+    tt.navigateTo({ url: "page/getphonenumber" });
+
+  }
   static navigateToMiniProgram(object) { return tt.navigateToMiniProgram(object) }
   static navigateBackMiniProgram(object) { return tt.navigateBackMiniProgram(object) }
   static getAccountInfoSync(object) { return tt.getAccountInfoSync(object) }
 
   static reportMonitor(object) { /*return tt.reportMonitor(object)*/ }
   static reportAnalytics(object, eventName) { return tt.reportAnalytics(object, eventName) }
-  static requestPayment(object) { return tt.requestPayment(object); }
+  static requestPayment(object) {
+    var url = getApp().onekitwx.server + "orderinfo";
+    tt.request({
+      url: url,
+      data: {
+        out_trade_no: object.package.split("=")[1]
+      },
+      header: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: "POST",
+      success(res) {
+        console.log(res);
+        var object2 = {
+          orderInfo: res.data,
+          service: 3,
+          _debug:1,
+          success: object.success,
+          fail: object.fail,
+          complete: object.complete
+        };
+        return tt.pay(object2);
+      }
+    })
+  };
   static authorize(object) { return tt.authorize(object) }
   static openSetting(object) { return tt.openSetting(object) }
   static getSetting(object) { return tt.getSetting(object) }

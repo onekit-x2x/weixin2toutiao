@@ -1,12 +1,11 @@
-// onekit/ui/movable-area/movable-area.js
 Component({
-  data: {
-
+  mixins: [],
+  data: {},
+  props: {
+    scaleArea:false,
   },
-  properties: {
-
-  },
-  methods: {
-
-  }
-})
+  didMount() {},
+  didUpdate() {},
+  didUnmount() {},
+  methods: {},
+});
