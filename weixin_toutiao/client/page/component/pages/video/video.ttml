@@ -1,25 +1,25 @@
 <import src="../../../common/head.ttml"></import>
 <import src="../../../common/foot.ttml"></import>
 
-<view  class="container">
+<onekit-view  class="onekit-view container">
   <template  is="head" data="{{title: 'video'}}"></template>
 
-  <view  class="page-body">
-    <view  class="page-section tc">
-      <wx-video  id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn show-center-play-btn="{{false}}" show-play-btn="{{true}}" controls></wx-video>
+  <onekit-view  class="onekit-view page-body">
+    <onekit-view  class="onekit-view page-section tc">
+      <onekit-video class="onekit-video" id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" binderror="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn show-center-play-btn="{{false}}" show-play-btn="{{true}}" controls></onekit-video>
 
-      <view  class="weui-cells">
-        <view  class="weui-cell weui-cell_input">
-          <view  class="weui-cell__hd">
-            <view  class="weui-label">弹幕内容</view>
+      <onekit-view  class="onekit-view weui-cells">
+        <onekit-view  class="onekit-view weui-cell weui-cell_input">
+          <onekit-view  class="onekit-view weui-cell__hd">
+            <onekit-view  class="onekit-view weui-label">弹幕内容</view>
           </view>
-          <view  class="weui-cell__bd">
+          <onekit-view  class="onekit-view weui-cell__bd">
             <input  bindblur="bindInputBlur" class="weui-input" type="text" placeholder="在此处输入弹幕内容"></input>
           </view>
         </view>
       </view>
-      <view  class="btn-area">
-        <wx-button  bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">发送弹幕</wx-button>
+      <onekit-view  class="onekit-view btn-area">
+        <onekit-button  bindtap="bindSendDanmu" class="page-body-button" type="primary" formType="submit">发送弹幕</onekit-button>
       </view>
     </view>
   </view>

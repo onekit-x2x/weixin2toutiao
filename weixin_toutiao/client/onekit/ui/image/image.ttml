@@ -1,0 +1,12 @@
+<image 
+
+style="{{Style}}"
+mode="{{mode}}" 
+src="{{src}}"
+lazy-load="{{lazyLoad}}"
+
+binderror="image_error"
+bindload="image_load"
+>
+   <slot/>
+</image> 

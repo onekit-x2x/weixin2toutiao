@@ -1,6 +1,7 @@
 {
   "pages": [
-  
+    "page/component/pages/video/video",
+    "page/component/pages/image/image",
     "page/component/index",
     "page/component/pages/navigator/navigator",
     "page/component/pages/button/button",
@@ -29,9 +30,7 @@
     "page/component/pages/slider/slider",
     "page/component/pages/switch/switch",
     "page/component/pages/textarea/textarea",
-    "page/component/pages/image/image",
     "page/component/pages/audio/audio",
-    "page/component/pages/video/video",
     "page/component/pages/cover-view/cover-view",
     "page/API/index",
     "page/API/pages/login/login",

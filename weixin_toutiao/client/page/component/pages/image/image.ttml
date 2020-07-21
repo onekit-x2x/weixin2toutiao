@@ -1,23 +1,23 @@
 <import src="../../../common/head.ttml"></import>
 <import src="../../../common/foot.ttml"></import>
 
-<view  class="container">
+<onekit-view  class="onekit-view container">
   <template  is="head" data="{{title: 'image'}}"></template>
 
-  <view  class="page-body">
-    <view  class="page-section page-section-gap">
-      <view  class="page-section-title">Local Image</view>
-      <view  class="page-section-ctn">
-        <image  class="image" src="../../resources/pic/1.jpg"></image>
-      </view>
-    </view>
-    <view  class="page-section page-section-gap">
-      <view  class="page-section-title">Internet Image</view>
-      <view  class="page-section-ctn">
-        <image  class="image" src="{{imageUrl}}"></image>
-      </view>
-    </view>
-  </view>
+  <onekit-view  class="onekit-view  page-body">
+    <onekit-view  class="onekit-view page-section page-section-gap">
+      <onekit-view  class="onekit-view page-section-title">Local Image</onekit-view>
+      <onekit-view  class="onekit-view page-section-ctn">
+        <onekit-image  class="onekit-image image" src="../../resources/pic/1.jpg"></onekit-image>
+      </onekit-view>
+    </onekit-view>
+    <onekit-view  class="onekit-view page-section page-section-gap">
+      <onekit-view  class="onekit-view page-section-title">Internet Image</onekit-view>
+      <onekit-view  class="onekit-view page-section-ctn">
+        <onekit-image class="onekit-image image" src="{{imageUrl}}"></onekit-image>
+      </onekit-view>
+    </onekit-view>
+  </onekit-view>
 
   <template  is="foot"></template>
-</view>
+</onekit-view>

@@ -1,15 +1,15 @@
 {
   "navigationBarTitleText": "map",
   "usingComponents": {
-    "wx-ad": "/onekit/ui/ad/ad",
-    "wx-button": "/onekit/ui/button/button",
-    "wx-editor": "/onekit/ui/editor/editor",
-    "wx-map": "/onekit/ui/map/map",
-    "wx-modal": "/onekit/ui/modal/modal",
-    "wx-open-data": "/onekit/ui/open-data/open-data",
-    "wx-rich-text": "/onekit/ui/rich-text/rich-text",
-    "wx-video": "/onekit/ui/video/video",
-    "wx-movable-area": "/onekit/ui/movable-area/movable-area",
-    "wx-movable-view": "/onekit/ui/movable-view/movable-view"
+    "onekit-ad": "/onekit/ui/ad/ad",
+    "onekit-button": "/onekit/ui/button/button",
+    "onekit-editor": "/onekit/ui/editor/editor",
+    "onekit-map": "/onekit/ui/map/map",
+    "onekit-modal": "/onekit/ui/modal/modal",
+    "onekit-open-data": "/onekit/ui/open-data/open-data",
+    "onekit-rich-text": "/onekit/ui/rich-text/rich-text",
+    "onekit-video": "/onekit/ui/video/video",
+    "onekit-movable-area": "/onekit/ui/movable-area/movable-area",
+    "onekit-movable-view": "/onekit/ui/movable-view/movable-view"
   }
 }
