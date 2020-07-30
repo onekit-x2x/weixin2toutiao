@@ -1,66 +1,68 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
 
 
-<onekit-view class="onekit-view container">
-	<template is="head" data="{{title: 'open-data'}}"></template>
-	<onekit-view class="onekit-view page-body">
-		<onekit-view class="onekit-view avatar">
-			<onekit-open-data class="onekit-open-data avatar-img" type="userAvatarUrl" lang="zh_CN"></onekit-open-data>
-		</onekit-view>
-		<onekit-form class="onekit-form">
-			<onekit-view class="onekit-view page-section">
-				<onekit-view class="onekit-view weui-cells weui-cells_after-title">
-					<onekit-view class="onekit-view weui-cell weui-cell_input">
-						<onekit-view class="onekit-view weui-cell__hd">
-							<onekit-view class="onekit-view weui-label">昵称</onekit-view>
-						</onekit-view>
-						<onekit-view class="onekit-view weui-cell__bd">
-							<onekit-view class="onekit-view weui-input">
-								<onekit-open-data class="onekit-open-data" type="userNickName" lang="zh_CN"></onekit-open-data>
-							</onekit-view>
-						</onekit-view>
-					</onekit-view>
+<view class="container">
+  <template is="head" data="{{title: 'open-data'}}">
+</template>
+  <view class="page-body">
+    <view class="avatar">
+      <onekit-open-data Class="avatar-img" type="userAvatarUrl" lang="zh_CN"></onekit-open-data>
+    </view>
+    <form>
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">昵称</view>
+            </view>
+            <view class="weui-cell__bd">
+              <view class="weui-input">
+                <onekit-open-data type="userNickName" lang="zh_CN"></onekit-open-data>
+              </view>
+            </view>
+          </view>
 
-					<onekit-view class="onekit-view weui-cell weui-cell_input">
-						<onekit-view class="onekit-view weui-cell__hd">
-							<onekit-view class="onekit-view weui-label">性别</onekit-view>
-						</onekit-view>
-						<onekit-view class="onekit-view weui-cell__bd">
-							<onekit-view class="onekit-view weui-input">
-								<onekit-open-data class="onekit-open-data" type="userGender" lang="zh_CN"></onekit-open-data>
-							</onekit-view>
-						</onekit-view>
-					</onekit-view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">性别</view>
+            </view>
+            <view class="weui-cell__bd">
+              <view class="weui-input">
+                <onekit-open-data type="userGender" lang="zh_CN"></onekit-open-data>
+              </view>
+            </view>
+          </view>
 
-					<onekit-view class="onekit-view weui-cell weui-cell_input">
-						<onekit-view class="onekit-view weui-cell__hd">
-							<onekit-view class="onekit-view weui-label">地区</onekit-view>
-						</onekit-view>
-						<onekit-view class="onekit-view weui-cell__bd">
-							<onekit-view class="onekit-view weui-input">
-								<onekit-open-data class="onekit-open-data country" type="userCountry" lang="zh_CN"></onekit-open-data>
-								<onekit-open-data class="onekit-open-data province" type="userProvince" lang="zh_CN"></onekit-open-data>
-								<onekit-open-data class="onekit-open-data city" type="userCity" lang="zh_CN"></onekit-open-data>
-							</onekit-view>
-						</onekit-view>
-					</onekit-view>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">地区</view>
+            </view>
+            <view class="weui-cell__bd">
+              <view class="weui-input">
+                <onekit-open-data Class="country" type="userCountry" lang="zh_CN"></onekit-open-data>
+                <onekit-open-data Class="province" type="userProvince" lang="zh_CN"></onekit-open-data>
+                <onekit-open-data Class="city" type="userCity" lang="zh_CN"></onekit-open-data>
+              </view>
+            </view>
+          </view>
 
 
-					<onekit-view class="onekit-view weui-cell weui-cell_input">
-						<onekit-view class="onekit-view weui-cell__hd">
-							<onekit-view class="onekit-view weui-label">语言</onekit-view>
-						</onekit-view>
-						<onekit-view class="onekit-view weui-cell__bd">
-							<onekit-view class="onekit-view weui-input">
-								<onekit-open-data class="onekit-open-data" type="userLanguage" lang="zh_CN"></onekit-open-data>
-							</onekit-view>
-						</onekit-view>
-					</onekit-view>
-				</onekit-view>
-			</onekit-view>
-		</onekit-form>
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+              <view class="weui-label">语言</view>
+            </view>
+            <view class="weui-cell__bd">
+              <view class="weui-input">
+                <onekit-open-data type="userLanguage" lang="zh_CN"></onekit-open-data>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </form>
 
-	</onekit-view>
-	<template is="foot"></template>
-</onekit-view>
+  </view>
+  <template is="foot">
+</template>
+</view>

@@ -1,0 +1,22 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'WXS'}}">
+</template>
+
+  <view class="page-body">
+    <view class="page-section">
+    <view class="btn-area">
+      <onekit-button type="primary" data-nav="movable" bind:tap="handleNavChange">movable</onekit-button>
+    </view>
+    
+    <view class="btn-area">
+      <onekit-button type="primary" data-nav="nearby" bind:tap="handleNavChange">跟随 swiper 的图片切换</onekit-button>   
+    </view>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

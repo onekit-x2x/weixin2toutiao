@@ -1,30 +1,32 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
 
-<onekit-view class="onekit-view container">
-	<template is="head" data="{{title: 'progress'}}"></template>
+<view class="container">
+  <template is="head" data="{{title: 'progress'}}">
+</template>
 
-	<onekit-view class="onekit-view page-body">
-		<onekit-view class="onekit-view page-section page-section-gap">
+  <view class="page-body">
+    <view class="page-section page-section-gap">
 
-			<onekit-view class="onekit-view progress-box">
-				<onekit-progress class="onekit-progress"  percent="20" show-info stroke-width="3"></onekit-progress>
-			</onekit-view>
+      <view class="progress-box">
+        <progress percent="20" show-info stroke-width="3"></progress>
+      </view>
 
-			<onekit-view class="onekit-view progress-box">
-				<onekit-progress class="onekit-progress"  percent="40" active stroke-width="3"></onekit-progress>
-				<icon class="progress-cancel" type="cancel"></icon>
-			</onekit-view>
+      <view class="progress-box">
+        <progress percent="40" active stroke-width="3"></progress>
+        <onekit-icon Class="progress-cancel" type="cancel"></onekit-icon>
+      </view>
 
-			<onekit-view class="onekit-view progress-box">
-				<onekit-progress class="onekit-progress"  percent="60" active stroke-width="3"></onekit-progress>
-			</onekit-view>
+      <view class="progress-box">
+        <progress percent="60" active stroke-width="3"></progress>
+      </view>
 
-			<onekit-view class="onekit-view progress-box">
-				<onekit-progress class="onekit-progress"  percent="80" active-color="#10AEFF" active stroke-width="3"></onekit-progress>
-			</onekit-view>
-		</onekit-view>
-	</onekit-view>
+      <view class="progress-box">
+        <progress percent="80" color="#10AEFF" active stroke-width="3"></progress>
+      </view>
+    </view>
+  </view>
 
-	<template is="foot"></template>
-</onekit-view>
+  <template is="foot">
+</template>
+</view>

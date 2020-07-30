@@ -1,35 +1,49 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
 
-<view  class="container">
-  <template  is="head" data="{{title: 'camera'}}"></template>
+<view class="container">
+  <template is="head" data="{{title: 'camera'}}">
+</template>
 
-  <view  class="page-body">
-    <view  class="page-body-wrapper">
-      <camera  flash="off" device-position="{{position}}" binderror="error">
+  <view class="page-body">
+    <view class="page-body-wrapper">
+    <view style="margin-bottom: 10px"> camera 组件 </view>
+      <camera flash="off" device-position="{{position}}" binderror="error">
       </camera>
-      <view  class="btn-area first-btn">
-      <wx-button  type="primary" bindtap="togglePosition">切换摄像头</wx-button>
+       <view tt:if="{{showCanvas}}" class="info-container">
+          <view style="margin: 10px 0">使用实时数据帧在 canvas 组件的展示</view>
+          <view>
+            帧高度：{{ frameHeight }}  帧宽度：{{ frameWidth }}
+          </view>
+          <canvas id="webgl" type="webgl" canvas-id="canvas" style="width: {{width}}px; height: {{height}}px;">
+          </canvas>
+        </view>
+      <view class="btn-area first-btn">
+        <onekit-button bindtap="handleShowCanvas" type="primary">{{showCanvas ? "关闭实时帧数据模式": "开启实时帧数据模式"}}</onekit-button>
       </view>
-      <view  class="btn-area">
-        <wx-button  type="primary" bindtap="takePhoto">拍照</wx-button>
+      <view class="btn-area">
+      <onekit-button type="primary" bindtap="togglePosition">切换摄像头</onekit-button>
       </view>
-      <view  class="btn-area">
-        <wx-button  type="primary" bindtap="startRecord">开始录像</wx-button>
+      <view class="btn-area">
+        <onekit-button type="primary" bindtap="takePhoto">拍照</onekit-button>
       </view>
-      <view  class="btn-area">
-        <wx-button  type="primary" bindtap="stopRecord">结束录像</wx-button>
+      <view class="btn-area">
+        <onekit-button type="primary" bindtap="startRecord">开始录像</onekit-button>
       </view>
-      <view  class="btn-area">
-        <navigator  url="/page/component/pages/camera-scan-code/camera-scan-code">
-          <wx-button  type="primary">扫描一维码</wx-button>
+      <view class="btn-area">
+        <onekit-button type="primary" bindtap="stopRecord">结束录像</onekit-button>
+      </view>
+      <view class="btn-area">
+        <navigator url="/page/component/pages/camera-scan-code/camera-scan-code" hover-class="none">
+          <onekit-button type="primary">扫描一维码</onekit-button>
         </navigator>
       </view>
-      <view  class="preview-tips">预览</view>
-      <image  tt:if="{{src}}" mode="widthFix" class="photo" src="{{src}}"></image>
-      <wx-video  tt:if="{{videoSrc}}" class="video" src="{{videoSrc}}"></wx-video>
+      <view class="preview-tips">点击录像或拍照即可在下方预览效果</view>
+      <image tt:if="{{src}}" mode="widthFix" class="photo" src="{{src}}"></image>
+      <onekit-video tt:if="{{videoSrc}}" Class="video" src="{{videoSrc}}"></onekit-video>
     </view>
   </view>
 
-  <template  is="foot"></template>
+  <template is="foot">
+</template>
 </view>

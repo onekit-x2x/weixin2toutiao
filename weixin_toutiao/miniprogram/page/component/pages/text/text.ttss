@@ -1,4 +1,4 @@
-.onekit-button{
+button{
   margin: 20px 0;
 }
 .text-box{

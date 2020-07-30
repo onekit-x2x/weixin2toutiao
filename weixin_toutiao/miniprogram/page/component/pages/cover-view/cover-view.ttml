@@ -1,24 +1,26 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
 
-<onekit-view  class="onekit-view container">
-  <template  is="head" data="{{title: 'cover-view'}}"></template>
+<view class="container">
+  <template is="head" data="{{title: 'cover-view'}}">
+</template>
 
-  <onekit-view  class="onekit-view page-body">
-    <onekit-view  class="onekit-view page-section page-section-gap">
-      <map  style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}">
-        <onekit-cover-view  class="onekit-cover-view cover-view">
-          <onekit-cover-view  class="onekit-cover-view container">
-            <onekit-cover-view  class="onekit-cover-view flex-wrp" style="flex-direction:row;">
-              <onekit-cover-view  class="onekit-cover-view flex-item demo-text-1"></onekit-cover-view>
-              <onekit-cover-view  class="onekit-cover-view flex-item demo-text-2"></onekit-cover-view>
-              <onekit-cover-view  class="onekit-cover-view flex-item demo-text-3"></onekit-cover-view>
-            </onekit-cover-view>
-          </onekit-cover-view>
-        </onekit-cover-view>
-      </map>
-    </onekit-view>
-  </onekit-view>
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+      <onekit-map Style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}">
+        <cover-view class="cover-view">
+          <cover-view class="container">
+            <cover-view class="flex-wrp" style="flex-direction:row;">
+              <cover-view class="flex-item demo-text-1"></cover-view>
+              <cover-view class="flex-item demo-text-2"></cover-view>
+              <cover-view class="flex-item demo-text-3"></cover-view>
+            </cover-view>
+          </cover-view>
+        </cover-view>
+      </onekit-map>
+    </view>
+  </view>
 
-  <template  is="foot"></template>
-</onekit-view>
+  <template is="foot">
+</template>
+</view>

@@ -1,0 +1,22 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'createContext'}}">
+</template>
+
+  <view class="page-body">
+    <view class="page-section">
+      <canvas class="canvas-element" canvas-id="canvas"></canvas>
+      <scroll-view class="canvas-buttons" scroll-y="true">
+        <block tt:for="{{methods}}" tt:for-item="method">
+          <onekit-button Class="canvas-button" bindtap="{{method}}">{{method}}</onekit-button>
+        </block>
+        <onekit-button Class="canvas-button" bindtap="toTempFilePath" type="primary">toTempFilePath</onekit-button>
+      </scroll-view>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

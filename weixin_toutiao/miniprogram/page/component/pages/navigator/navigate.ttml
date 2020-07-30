@@ -1,6 +1,7 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
 
-<onekit-view  class="onekit-view container">
-  <template  is="head" data="{{title: '新建的页面'}}"></template>
-</onekit-view>
+<view class="container">
+  <template is="head" data="{{title: '新建的页面'}}">
+</template>
+</view>

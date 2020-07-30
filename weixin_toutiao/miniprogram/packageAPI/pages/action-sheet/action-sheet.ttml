@@ -1,0 +1,16 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'action-sheet'}}">
+</template>
+
+  <view class="page-body">
+    <view class="btn-area">
+      <onekit-button type="default" bindtap="actionSheetTap">弹出action sheet</onekit-button>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

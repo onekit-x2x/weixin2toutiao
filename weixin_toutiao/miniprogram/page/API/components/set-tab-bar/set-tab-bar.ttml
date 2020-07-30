@@ -1,32 +1,34 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
 
-<view  class="container">
-  <template  is="head" data="{{title: 'tabBar'}}"></template>
+<view class="container">
+  <template is="head" data="{{title: 'tabBar'}}">
+</template>
 
-  <view  class="page-body">
-    <view  class="btn-area">
-      <wx-button  bindtap="setTabBarBadge">
+  <view class="page-body">
+    <view class="btn-area">
+      <onekit-button bindtap="setTabBarBadge">
         {{ !hasSetTabBarBadge ? '设置tab徽标' : '移除tab徽标' }}
-      </wx-button>
-      <wx-button  bindtap="showTabBarRedDot">
+      </onekit-button>
+      <onekit-button bindtap="showTabBarRedDot">
         {{ !hasShownTabBarRedDot ?  '显示红点' : '移除红点'}}
-      </wx-button>
-      <wx-button  bindtap="customStyle">
+      </onekit-button>
+      <onekit-button bindtap="customStyle">
         {{ !hasCustomedStyle ? '自定义Tab样式' : '移除自定义样式'}}
-      </wx-button>
-      <wx-button  bindtap="customItem">
+      </onekit-button>
+      <onekit-button bindtap="customItem">
         {{ !hasCustomedItem ? '自定义Tab信息' : '移除自定义信息' }}
-      </wx-button>
-      <wx-button  bindtap="hideTabBar">
+      </onekit-button>
+      <onekit-button bindtap="hideTabBar">
         {{ !hasHiddenTabBar ? '隐藏TabBar' : '显示TabBar' }}
-      </wx-button>
+      </onekit-button>
     </view>
 
-    <view  class="btn-area">
-      <wx-button  type="primary" bindtap="navigateBack">返回上一级</wx-button>
+    <view class="btn-area">
+      <onekit-button type="primary" bindtap="navigateBack">返回上一级</onekit-button>
     </view>
   </view>
 
-  <template  is="foot"></template>
+  <template is="foot">
+</template>
 </view>

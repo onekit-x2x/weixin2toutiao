@@ -1,0 +1,19 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'startSoterAuthentication'}}">
+</template>
+
+  <view class="page-body">
+    <view class="btn-area">
+      <onekit-button type="primary" data-mode="fingerPrint" bindtap="startAuth">指纹认证</onekit-button>
+    </view>
+     <view class="btn-area">
+      <onekit-button type="primary" data-mode="facial" bindtap="startAuth">人脸认证</onekit-button>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

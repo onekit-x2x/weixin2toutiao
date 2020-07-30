@@ -1,0 +1,16 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'scanCode'}}">
+</template>
+
+  <view class="page-body">
+    <view class="btn-area">
+      <onekit-button type="primary">联系客服</onekit-button>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

@@ -1,21 +1,21 @@
 @import "../../../common/lib/weui.ttss";
 
-.onekit-camera {
-  height: 500rpx;
+camera {
+  height: 250px;
 }
 
 .btn-area {
   margin-top: 0;
 }
 
-.onekit-form {
-  margin-top: 30rpx;
+form {
+  margin-top: 15px;
 }
 
 .weui-cell__bd {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 20rpx 0;
-  min-height: 60rpx;
+  padding: 10px 0;
+  min-height: 30px;
 }

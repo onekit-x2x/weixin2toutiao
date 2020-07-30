@@ -1,9 +1,10 @@
-import wx from "../../../../onekit/wx"
-Page({
-  onShareAppMessage() {
-    return {
-      title: 'progress',
-      path: 'page/component/pages/progress/progress'
+import {OnekitApp,OnekitPage,OnekitComponent} from "../../../../onekit/onekit.js";
+import wx from "../../../../onekit/wx.js";
+OnekitPage({
+    onShareAppMessage:function(){
+        return {
+            title:'progress',
+            path:'page/component/pages/progress/progress'
+        };
     }
-  },
-})
+});

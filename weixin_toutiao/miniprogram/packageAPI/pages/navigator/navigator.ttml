@@ -1,0 +1,20 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'navigateTo/Back, redirectTo'}}">
+</template>
+
+  <view class="page-body">
+    <view class="btn-area">
+      <onekit-button bindtap="navigateTo">跳转新页面</onekit-button>
+      <onekit-button bindtap="navigateBack">返回上一页</onekit-button>
+      <onekit-button bindtap="redirectTo">在当前页面打开</onekit-button>
+      <onekit-button bindtap="switchTab">跳转到组件Tab页</onekit-button>
+      <onekit-button bindtap="reLaunch">关闭所有页面并跳转</onekit-button>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

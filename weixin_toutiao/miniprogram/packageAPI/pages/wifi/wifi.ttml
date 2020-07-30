@@ -1,0 +1,33 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'Wi-Fi'}}">
+</template>
+
+  <view class="page-body">
+    <view class="page-body-info">
+      <scroll-view class="device-list" scroll-y>
+        <view tt:for="{{wifiList}}" tt:key="index" class="item">
+          <view class="list">
+            <text>{{ item.SSID }}</text>
+            <span class="wifi-icon">
+              <span class="wifi-1"></span>
+              <span class="wifi-2 {{item.strength < 2 ? 'off' : ''}}"></span>
+              <span class="wifi-3 {{item.strength < 3 ? 'off' : ''}}"></span>
+              <span class="wifi-4 {{item.strength < 4 ? 'off' : ''}}"></span>
+              <span class="lock" tt:if="{{item.secure}}"></span>
+            </span>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="btn-area">
+      <onekit-button type="primary" bindtap="startSearch">搜索Wi-Fi</onekit-button>
+      <onekit-button bindtap="stopSearch">停止搜索</onekit-button>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

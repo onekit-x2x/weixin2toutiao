@@ -1,0 +1,20 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'makePhoneCall'}}">
+</template>
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="desc">请在下方输入电话号码</view>
+      <input class="input" type="number" name="input" bindinput="bindInput"></input>
+      <view class="btn-area">
+        <onekit-button type="primary" bindtap="makePhoneCall" disabled="{{disabled}}">拨打</onekit-button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

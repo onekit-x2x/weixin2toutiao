@@ -1,43 +1,45 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
 
-<onekit-view class="onekit-view container">
-  <template  is="head" data="{{title: 'ad'}}"></template>
+<view class="container">
+  <template is="head" data="{{title: 'ad'}}">
+</template>
 
-  <onekit-view class="onekit-view page-body">
-    <onekit-view class="onekit-view page-section page-section-gap">
-      <onekit-view class="onekit-view page-section-title">关注卡片</onekit-view>
-      <onekit-ad class="onekit-ad" unit-id="adunit-demo4"></onekit-ad>
-    </onekit-view>
-    <onekit-view class="onekit-view page-section page-section-gap"  tt:if="{{platform == 'ios'}}">
-      <onekit-view class="onekit-view page-section-title">下载卡片</onekit-view>
-      <onekit-ad class="onekit-ad" unit-id="adunit-demo8"></onekit-ad>
-    </onekit-view>
-    <onekit-view class="onekit-view page-section page-section-gap"  tt:else>
-      <onekit-view class="onekit-view page-section-title">下载卡片</onekit-view>
-      <onekit-ad class="onekit-ad" unit-id="adunit-demo9"></onekit-ad>
-    </onekit-view>
-    <onekit-view class="onekit-view page-section page-section-gap"  tt:if="{{platform == 'ios'}}">
-      <onekit-view class="onekit-view page-section-title">应用推广</onekit-view>
-      <onekit-ad class="onekit-ad" unit-id="adunit-demo2"></onekit-ad>
-    </onekit-view>
-    <onekit-view class="onekit-view page-section page-section-gap"  tt:else>
-      <onekit-view class="onekit-view page-section-title">应用推广</onekit-view>
-      <onekit-ad class="onekit-ad" unit-id="adunit-demo7"></onekit-ad>
-    </onekit-view>
-    <onekit-view class="onekit-view page-section page-section-gap">
-      <onekit-view class="onekit-view page-section-title">公众号推广</onekit-view>
-      <onekit-ad class="onekit-ad" unit-id="adunit-demo3"></onekit-ad>
-    </onekit-view>
-    <onekit-view class="onekit-view page-section page-section-gap">
-      <onekit-view class="onekit-view page-section-title">活动推广</onekit-view>
-      <onekit-ad class="onekit-ad" unit-id="adunit-demo5"></onekit-ad>
-    </onekit-view>
-    <onekit-view class="onekit-view page-section page-section-gap">
-      <onekit-view class="onekit-view page-section-title">商品推广</onekit-view>
-      <onekit-ad class="onekit-ad" unit-id="adunit-demo6"></onekit-ad>
-    </onekit-view>
-  </onekit-view>
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">关注卡片</view>
+      <onekit-ad unit-id="adunit-demo4"></onekit-ad>
+    </view>
+    <view tt:if="{{platform === 'ios'}}" class="page-section page-section-gap">
+      <view class="page-section-title">下载卡片</view>
+      <onekit-ad unit-id="adunit-demo8"></onekit-ad>
+    </view>
+    <view tt:else class="page-section page-section-gap">
+      <view class="page-section-title">下载卡片</view>
+      <onekit-ad unit-id="adunit-demo9"></onekit-ad>
+    </view>
+    <view tt:if="{{platform === 'ios'}}" class="page-section page-section-gap">
+      <view class="page-section-title">应用推广</view>
+      <onekit-ad unit-id="adunit-demo2"></onekit-ad>
+    </view>
+    <view tt:else class="page-section page-section-gap">
+      <view class="page-section-title">应用推广</view>
+      <onekit-ad unit-id="adunit-demo7"></onekit-ad>
+    </view>
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">公众号推广</view>
+      <onekit-ad unit-id="adunit-demo3"></onekit-ad>
+    </view>
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">活动推广</view>
+      <onekit-ad unit-id="adunit-demo5"></onekit-ad>
+    </view>
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">商品推广</view>
+      <onekit-ad unit-id="adunit-demo6"></onekit-ad>
+    </view>
+  </view>
 
-  <template  is="foot"></template>
-</onekit-view>
+  <template is="foot">
+</template>
+</view>

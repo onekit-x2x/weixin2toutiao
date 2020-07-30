@@ -1,0 +1,19 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'vibrate/Long/Short'}}">
+</template>
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="btn-area">
+        <onekit-button type="primary" bindtap="vibrateLong">长振动</onekit-button>
+        <onekit-button type="default" bindtap="vibrateShort">短振动</onekit-button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

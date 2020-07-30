@@ -1,0 +1,23 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'loadFontFace'}}">
+</template>
+
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-body-info display-area {{ loaded ? 'font-loaded' : '' }}">
+        <text tt:if="{{!loaded}}">Load {{ fontFamily }}</text>
+        <text tt:else>{{ fontFamily }} is loaded</text>
+      </view>
+      <view class="btn-area">
+        <onekit-button type="primary" bindtap="loadFontFace">加载字体</onekit-button>
+        <onekit-button type="default" bindtap="clear">清除</onekit-button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

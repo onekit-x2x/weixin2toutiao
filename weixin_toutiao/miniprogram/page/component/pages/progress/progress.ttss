@@ -1,4 +1,4 @@
-.onekit-progress{
+progress{
   width: 100%;
 }
 .progress-box{

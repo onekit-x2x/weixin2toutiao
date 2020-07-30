@@ -1,16 +1,26 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
 
-<onekit-view  class="onekit-view container">
-  <template  is="head" data="{{title: 'canvas'}}"></template>
+<view class="container">
+  <template is="head" data="{{title: 'canvas'}}">
+</template>
 
-  <onekit-view  class="onekit-view page-body">
-    <onekit-view  class="onekit-view page-body-wrapper">
-      <onekit-canvas canvas-id="canvas" class="onekit-canvas canvas"></onekit-canvas>
-    </onekit-view>
-  </onekit-view>
+  <view class="page-body">
+    <block tt:if="{{canIUse}}">
+      <view class="page-section">
+        <view class="page-section-spacing">
+          <view class="page-body-wrapper">
+            <canvas canvas-id="canvas" class="canvas"></canvas>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view tt:else style="margin: 15px; text-align:center">
+      微信版本过低，暂不支持本功能
+    </view>
+  </view>
 
-  <template  is="foot"></template>
-</onekit-view>
-
+  <template is="foot">
+</template>
+</view>
 

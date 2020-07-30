@@ -1,36 +1,38 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
 
-<view  class="container">
-  <template  is="head" data="{{title: 'map'}}"></template>
+<view class="container">
+  <template is="head" data="{{title: 'map'}}">
+</template>
 
-  <view  class="page-body">
-    <view  class="page-section page-section-gap">
-      <view  class="page-section-title">经典</view>
-      <view  class="page-section-ctn">
-        <image  class="image" src="../../resources/pic/custom_map_template_1.png"></image>
+  <view class="page-body">
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">经典</view>
+      <view class="page-section-ctn">
+        <image class="image" src="../../resources/pic/custom_map_template_1.png"></image>
       </view>
     </view>
-    <view  class="page-section page-section-gap">
-      <view  class="page-section-title">墨渊</view>
-      <view  class="page-section-ctn">
-        <image  class="image" src="../../resources/pic/custom_map_template_2.png"></image>
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">墨渊</view>
+      <view class="page-section-ctn">
+        <image class="image" src="../../resources/pic/custom_map_template_2.png"></image>
       </view>
     </view>
-    <view  class="page-section page-section-gap">
-      <view  class="page-section-title">白浅</view>
-      <view  class="page-section-ctn">
-        <image  class="image" src="../../resources/pic/custom_map_template_3.png"></image>
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">白浅</view>
+      <view class="page-section-ctn">
+        <image class="image" src="../../resources/pic/custom_map_template_3.png"></image>
       </view>
     </view>
-    <view  class="page-section page-section-gap">
-      <view  class="page-section-title">玉露</view>
-      <view  class="page-section-ctn">
-        <image  class="image" src="../../resources/pic/custom_map_template_4.png"></image>
+    <view class="page-section page-section-gap">
+      <view class="page-section-title">玉露</view>
+      <view class="page-section-ctn">
+        <image class="image" src="../../resources/pic/custom_map_template_4.png"></image>
       </view>
     </view>
     
   </view>
 
-  <template  is="foot"></template>
+  <template is="foot">
+</template>
 </view>

@@ -1,0 +1,17 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'navigationBarLoading'}}">
+</template>
+
+  <view class="page-body">
+    <view class="btn-area">
+      <onekit-button type="primary" bindtap="showNavigationBarLoading">显示加载动画</onekit-button>
+      <onekit-button bindtap="hideNavigationBarLoading">隐藏加载动画</onekit-button>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

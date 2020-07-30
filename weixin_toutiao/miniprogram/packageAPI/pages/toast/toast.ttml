@@ -1,0 +1,27 @@
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
+
+<view class="container">
+  <template is="head" data="{{title: 'toast'}}">
+</template>
+
+  <view class="page-body">
+    <view class="btn-area">
+      <view class="body-view">
+        <onekit-button type="default" bindtap="toast1Tap">点击弹出默认toast</onekit-button>
+      </view>
+      <view class="body-view">
+        <onekit-button type="default" bindtap="toast2Tap">点击弹出设置duration的toast</onekit-button>
+      </view>
+      <view class="body-view">
+        <onekit-button type="default" bindtap="toast3Tap">点击弹出显示loading的toast</onekit-button>
+      </view>
+      <view class="body-view">
+        <onekit-button type="default" bindtap="hideToast">点击隐藏toast</onekit-button>
+      </view>
+    </view>
+  </view>
+
+  <template is="foot">
+</template>
+</view>

@@ -1,0 +1,11 @@
+<sjs module="test" src="./nearby.wxs">
+</sjs>
+
+
+<swiper class="swiper" data-width="{{windowWidth}}" data-imgsize="{{imgSize}}" bindchange="{{test.change}}" bindanimationfinish="{{test.animationFinish}}" bindtransition="{{test.func}}" indicator-dots="{{indicatorDots}}" autoplay="{{true}}" interval="{{interval}}" circular duration="{{duration}}">
+  <block tt:for="{{imgUrls}}">
+    <swiper-item style="height:100%;">
+      <image src="{{item}}" class="slide-image" style="height:100%;width:100%;" mode="center" height="300"></image>
+    </swiper-item>
+  </block>
+</swiper>

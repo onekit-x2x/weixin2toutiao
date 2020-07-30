@@ -1,81 +1,116 @@
-import wx from "onekit/wx"
-import AppSocket from "onekit/lib/AppSocket"
-import onekit from "onekit/lib/onekit"
-
-const config = require('./config')
-
-App({
-    onekit:{
-        server:"https://www.onekit.com/weixin2toutiao/api/",
-        appid : onekit.guid(),
-        context : {},
-        webview : null,
-        },
-  onLaunch(opts) {
-     //  this.onekit.socket = new AppSocket("ws://localhost/baidu2toutiao/socket/",this.onekit.appid);
-      //  this.onekit.socket = new AppSocket("ws://localhost/weixin2toutiao/socket/",this.onekit.appid);
-      // this.onekit.socket = new AppSocket('wss://www.onekit.com/weixin2toutiao/socket/',this.onekit.appid);
-      this.onekit.socket = new AppSocket('wss://www.onekit.com/baidu2toutiao/socket/',this.onekit.appid);
-    console.log('App Launch', opts)
-   /* if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } else {
-      wx.cloud.init({
-        env: config.envId,
-        traceUser: true,
-      })
-    }*/
-  },
-  onShow(opts) {
-    console.log('App Show', opts)
-  },
-  onHide() {
-    console.log('App Hide')
-  },
-  globalData: {
-    hasLogin: false,
-    openid: null
-  },
-  // lazy loading openid
-  getUserOpenId(callback) {
-    const self = this
-
-    if (self.globalData.openid) {
-      callback(null, self.globalData.openid)
-    } else {
-      wx.login({
-        success(data) {
-          wx.request({
-            url: config.openIdUrl,
-            data: {
-              code: data.code
-            },
-            success(res) {
-              console.log('拉取openid成功', res)
-              self.globalData.openid = res.data.openid
-              callback(null, self.globalData.openid)
-            },
-            fail(res) {
-              console.log('拉取用户openid失败，将无法正常使用开放接口等服务', res)
-              callback(res)
-            }
-          })
-        },
-        fail(err) {
-          console.log('wx.login 接口调用失败，将无法正常使用开放接口等服务', err)
-          callback(err)
+import {OnekitApp,OnekitPage,OnekitComponent} from "./onekit/onekit.js";
+import wx from "./onekit/wx.js";
+const config = require('./config');
+const themeListeners = [
+];
+global.isDemo = true;
+OnekitApp({
+    onLaunch:function(opts,data){
+        const that = this;
+        const canIUseSetBackgroundFetchToken = wx.canIUse('setBackgroundFetchToken');
+        if(canIUseSetBackgroundFetchToken){
+            wx.setBackgroundFetchToken({
+                token:'getBackgroundFetchToken'
+            });
         }
-      })
+        if(wx.getBackgroundFetchData){
+            wx.getBackgroundFetchData({
+                fetchType:'pre',
+                success:function(res){
+                    that.globalData.backgroundFetchData = res;
+                    console.log('读取预拉取数据成功');
+                },
+                fail:function(){
+                    console.log('读取预拉取数据失败');
+                    wx.showToast({
+                        title:'无缓存数据',
+                        icon:'none'
+                    });
+                },
+                complete:function(){
+                    console.log('结束读取');
+                }
+            });
+        }
+        console.log('App Launch',opts);
+        if(data && data.path){
+            wx.navigateTo({
+                url:data.path
+            });
+        }
+        if(!wx.cloud){
+            console.error('请使用 2.2.3 或以上的基础库以使用云能力');
+        } else {
+            wx.cloud.init({
+                env:config.envId,
+                traceUser:true
+            });
+        }
+    },
+    onShow:function(opts){
+        console.log('App Show',opts);
+    },
+    onHide:function(){
+        console.log('App Hide');
+    },
+    onThemeChange:function({theme}){
+        this.globalData.theme = theme;
+        themeListeners.forEach((listener)=>{listener(theme)});
+    },
+    watchThemeChange:function(listener){
+        if(themeListeners.indexOf(listener) < 0){
+            themeListeners.push(listener);
+        }
+    },
+    unWatchThemeChange:function(listener){
+        const index = themeListeners.indexOf(listener);
+        if(index > -1){
+            themeListeners.splice(index,1);
+        }
+    },
+    globalData:{
+        theme:wx.getSystemInfoSync().theme,
+        hasLogin:false,
+        openid:null,
+        iconTabbar:'/page/weui/example/images/icon_tabbar.png'
+    },
+    getUserOpenId:function(callback){
+        const self = this;
+        if(self.globalData.openid){
+            callback(null,self.globalData.openid);
+        } else {
+            wx.login({
+                success:function(data){
+                    wx.cloud.callFunction({
+                        name:'login',
+                        data:{
+                            action:'openid'
+                        },
+                        success:(res)=>{
+                            console.log('拉取openid成功',res);
+                            self.globalData.openid = res.result.openid;
+                            callback(null,self.globalData.openid);
+                        },
+                        fail:(err)=>{
+                            console.log('拉取用户openid失败，将无法正常使用开放接口等服务',res);
+                            callback(res);
+                        }
+                    });
+                },
+                fail:function(err){
+                    console.log('wx.login 接口调用失败，将无法正常使用开放接口等服务',err);
+                    callback(err);
+                }
+            });
+        }
+    },
+    getUserOpenIdViaCloud:function(){
+        return wx.cloud.callFunction({
+    name:'wxContext',
+    data:{}
+}).then((res)=>{
+            this.globalData.openid = res.result.openid;
+            return res.result.openid;
+        });
     }
-  },
-  // 通过云函数获取用户 openid，支持回调或 Promise
-  getUserOpenIdViaCloud() {
-    return wx.cloud.callFunction({
-      name: 'wxContext',
-      data: {}
-    }).then(res => {
-      this.globalData.openid = res.result.openid
-      return res.result.openid
-    })
-  }
-})
+});

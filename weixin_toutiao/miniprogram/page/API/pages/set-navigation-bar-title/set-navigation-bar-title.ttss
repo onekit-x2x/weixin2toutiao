@@ -1,5 +1,0 @@
-@import "../../../common/lib/weui.ttss";
-
-.weui-label{
-  width: 5em;
-}

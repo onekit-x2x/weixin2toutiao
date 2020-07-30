@@ -1,1 +1,1 @@
-<onekit-web-view class="onekit-web-view" src="https://developers.weixin.qq.com/miniprogram/introduction/"></onekit-web-view>
+<web-view src="https://developers.weixin.qq.com/miniprogram/introduction/"></web-view>

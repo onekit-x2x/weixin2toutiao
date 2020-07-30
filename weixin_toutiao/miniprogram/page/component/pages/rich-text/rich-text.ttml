@@ -1,32 +1,34 @@
-<import src="../../../common/head.ttml"></import>
-<import src="../../../common/foot.ttml"></import>
+<import src="../../../common/head.ttml"/>
+<import src="../../../common/foot.ttml"/>
 
-<onekit-view class="onekit-view container">
-	<template is="head" data="{{title: 'rich-text'}}"></template>
+<view class="container">
+  <template is="head" data="{{title: 'rich-text'}}">
+</template>
 
-	<onekit-view class="onekit-view page-body">
-		<onekit-view class="onekit-view page-section">
-			<onekit-view class="onekit-view page-section-title">通过HTML String渲染</onekit-view>
-			<onekit-view class="onekit-view page-content">
-				<onekit-scroll-view class="onekit-scroll-view" scroll-y>{{htmlSnip}}</onekit-scroll-view>
-				<onekit-button class="onekit-button" type="primary" bindtap="renderHtml">渲染HTML</onekit-button>
-				<block tt:if="{{renderedByHtml}}">
-					<onekit-rich-text class="onekit-rich-text" nodes="{{htmlSnip}}"></onekit-rich-text>
-				</block>
-			</onekit-view>
-		</onekit-view>
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">通过HTML String渲染</view>
+      <view class="page-content">
+        <scroll-view scroll-y>{{htmlSnip}}</scroll-view>
+        <onekit-button type="primary" bindtap="renderHtml">渲染HTML</onekit-button>
+        <block tt:if="{{renderedByHtml}}">
+          <onekit-rich-text nodes="{{htmlSnip}}"></onekit-rich-text>
+        </block>
+      </view>
+    </view>
 
-		<onekit-view class="onekit-view page-section">
-			<onekit-view class="onekit-view page-section-title">通过节点渲染</onekit-view>
-			<onekit-view class="onekit-view page-content">
-				<onekit-scroll-view class="onekit-scroll-view" scroll-y>{{nodeSnip}}</onekit-scroll-view>
-				<onekit-button class="onekit-button" type="primary" bindtap="renderNode">渲染Node</onekit-button>
-				<block tt:if="{{renderedByNode}}">
-					<onekit-rich-text class="onekit-rich-text" nodes="{{nodes}}"></onekit-rich-text>
-				</block>
-			</onekit-view>
-		</onekit-view>
-	</onekit-view>
+    <view class="page-section">
+      <view class="page-section-title">通过节点渲染</view>
+      <view class="page-content">
+        <scroll-view scroll-y>{{nodeSnip}}</scroll-view>
+        <onekit-button type="primary" bindtap="renderNode">渲染Node</onekit-button>
+        <block tt:if="{{renderedByNode}}">
+          <onekit-rich-text nodes="{{nodes}}"></onekit-rich-text>
+        </block>
+      </view>
+    </view>
+  </view>
 
-	<template is="foot"></template>
-</onekit-view>
+  <template is="foot">
+</template>
+</view>
